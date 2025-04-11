@@ -31,7 +31,7 @@ public class Notification {
                 notificationManager.createNotificationChannel(channeldefault);
                 notificationManager.createNotificationChannel(channelhigh);
             }
-    }
+        }
     }
 
     public static void sendNotification(int NOTIFICATION_ID, String CHANNEL_ID, AppCompatActivity activity,String title,String message, int styleType, int largeIconResID){
@@ -40,7 +40,7 @@ public class Notification {
                 ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 100);
                 return;
             }
-            }
+        }
         NotificationManager notificationManager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(activity,CHANNEL_ID)
                 .setSmallIcon(R.drawable.obraz)
@@ -66,7 +66,9 @@ public class Notification {
                 builder.setStyle(inboxStyle);
                 break;
         }
+
         notificationManager.notify(NOTIFICATION_ID, builder.build());
     }
+
 
 }
